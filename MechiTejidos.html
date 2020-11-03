@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MechiTejidos</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <style media="screen">
+      body{
+        margin: 0;
+      }
+      header{
+        background-color: #FFFFFF;
+        background-image: url('https://previews.123rf.com/images/belchonock/belchonock1906/belchonock190601247/124120102-clews-of-knitting-threads-as-background-top-view-sewing-stuff.jpg');
+        background-size: cover;
+        padding: 20px;
+        height: 275px;
+      }
+      nav{
+        max-width: 1000px;
+        margin: auto;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        padding-left: 50px;
+        height: 60px;
+      }
+      figure{
+        overflow: hidden;
+        background-image: url('https://i.imgur.com/GLdqYB2.gif');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50px;
+        width: 75px;
+        height: 75px;
+      }
+      .container{
+        max-width: 1000px;
+        margin: auto;
+        padding-left: 50px;
+      }
+      h1{
+        font-family:'League Script', cursive;
+        font-size: 100px;
+        margin-bottom: 0;
+        margin-top: 70px;
+        margin-left: 30px;
+        color: white;
+      }
+      section{
+        color: #1F313C;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 60px;
+        max-width: 1000px;
+        margin: auto;
+        padding: 0 50px;
+      }
+      h2{
+        font-size: 30px;
+      }
+      .productos{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      article{
+        border: 2px solid #1F313C;
+        border-radius: 8px;
+        margin: 8px 16px 8px 0;
+        flex-grow: 2;
+        flex-basis: 10%;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        min-width: 300px;
+        height:auto;
+      }
+      .image-box{
+        width: -webkit-fill-available;
+        padding-top: 100%;
+        position: relative;
+        margin: 5px;
+
+        overflow: hidden;
+        background-image: url('https://eloisa-r.github.io/Weather_App/load-dribbble.gif');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 200px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      article img{
+        position: absolute;
+        top:0;
+        border-radius: 8px;
+        inline-size: -webkit-fill-available;
+      }
+      img.b-lazy {
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
+      }
+      img.b-loaded {
+        opacity: 1;
+      }
+      .ultimo{
+        border-width: 0;
+        width: 50%;
+      }
+      .especificaciones{
+        margin: 0 14px 5px 14px;
+      }
+      .especificaciones p{
+        font-size: 16px;
+        margin: 4px 0;
+        text-align-last: center;
+      }
+      .precio{
+        align-self: center;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .color{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+      }
+      input[type="color"] {
+      	-webkit-appearance: none;
+      	width: 15px;
+      	height: 15px;
+        margin-top: 5px;
+        border-width: .2px;
+      }
+      input[type="color"]::-webkit-color-swatch-wrapper {
+      	padding: 5;
+      }
+      input[type="color"]::-webkit-color-swatch {
+      	border: none;
+      }
+      .unidades{
+        display: flex;
+        justify-content: space-between;
+      }
+      input[type="number"] {
+      	-webkit-appearance: none;
+      	width: 30px;
+      	height: 15px;
+        margin-top: 5px;
+        border-width: .2px;
+      }
+      .carrito{
+        display: flex;
+        justify-content: space-between;
+      }
+      .comprar {
+        margin: 30px 0 50px 0;
+        border-radius: 12px;
+        border: none;
+        color: white;
+        padding: 10px 12px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 28px;
+        background: #fd324e;
+        background: linear-gradient(to left, #fe344e, #ff7250);
+        width: -webkit-fill-available;
+      }
+      footer{
+        background: #e52c5e;
+        padding: 50px 10px;
+        font-family: 'Allerta', sans-serif;
+      }
+      .contenedor{
+        display: flex;
+        justify-content: space-between;
+        max-width: 900px;
+        margin: auto;
+      }
+      .contacto{
+        display: flex;
+        width: 300px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .contacto a {
+        color: white;
+        text-decoration: none;
+        margin: 10px 10px 10px 0;
+      }
+      .links{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        width: 100px;
+      }
+      .formulario{
+        display: flex;
+        width: 400px;
+        color: white;
+      }
+      .col1, .col2 {
+        display: flex;
+        flex-direction: column;
+      }
+      .col1 {
+        margin-right: 15px;
+      }
+      .col2 {
+        align-items: flex-start;
+      }
+      .formulario label, .sexo, .intereses {
+        margin-bottom: 10px;
+      }
+      .intereses label {
+        font-size: 12px;
+      }
+      .sexo{
+        margin-top: 10px;
+      }
+      input, textarea {
+          outline: 0;
+      }
+      .col2 .button {
+        margin-top: 15px;
+      }
+      .button {
+        border-radius: 12px;
+        border: none;
+        color: white;
+        padding: 7px 12px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 18px;
+        background: #fd324e;
+        background: linear-gradient(to left, #fe344e, #ff7250);
+      }
+      @media screen and (max-width: 500px) {
+        h1{
+          font-size: 50px;
+          margin-top: 30px;
+          display: block;
+        }
+        header{
+          height: auto;
+          position: static;
+          text-align: center;
+        }
+        figure{
+          margin:0;
+          padding: 0;
+        }
+        .container{
+          padding: 0;
+        }
+        section{
+          padding: 0 15px;
+        }
+        h2{
+          font-size: 20px;
+        }
+        article{
+          margin: 0 0 20px 0;
+        }
+        .comprar{
+          margin-top: 0;
+        }
+        .contenedor{
+          display: block;
+        }
+        .contacto{
+          margin: 0 auto;
+          margin-bottom: 20px;
+        }
+        .formulario{
+          display: block;
+          margin: 0 auto;
+          width: 300px;
+        }
+        .col1{
+          margin: 0;
+        }
+        .col2{
+          align-items: stretch;
+        }
+        input[type="text"], input[type="email"] {
+          font-size: 16px;
+          padding: 5px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            zoom: 1.5;
+        }
+        .intereses label {
+            display: block;
+            font-size: 16px;
+        }
+        textarea {
+          width: 100%;
+        }
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script>
+      //Lazy loading
+      (function() {
+        // Initialize
+        var bLazy = new Blazy();
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <figure>
+          <img style="width:75px;" class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=180LAcGM794OTT39OrztIw3eBU4Oy6ITA" alt="logotipo mtejidos">
+        </figure>
+      </nav>
+      <div class="container">
+        <h1>Mechi Tejidos</h1>
+      </div>
+    </header>
+    <section>
+      <h2>Nuestros productos</h2>
+      <div class="productos">
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1VZ6oPRexQJsSo7DD0la_4k5i3vWNC4pp" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$250</span></p>
+            <p style="font-size:20px;"><i>"Llavero Palta"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1VwEQdEkgzOmjq1hFK0J8GOPb-xqc7a3h" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$400</span></p>
+            <p style="font-size:20px;"><i>"Mike Wazowski"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1WBPOEatgM2lOaqftC4uDeTRM_yVNeoGe" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$350</span></p>
+            <p style="font-size:20px;"><i>"Baby Yoda"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1Vz7ST8jjYkylXiCGcpzFUh17z6TRlruE" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$650</span></p>
+            <p style="font-size:20px;"><i>"Llavero Donut"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1Vywu7aH_rdtrQ_HDYaJhdXTNNS2WjZjG" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$350</span></p>
+            <p style="font-size:20px;"><i>"Groot"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1VeMzJO-cR6cifPwOI-1ImnLxr6RsbaQy" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$300</span></p>
+            <p style="font-size:20px;"><i>"Llavero unicornio"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1VcVXHOUTMLoiABxKx5LlRDPiZ96LsetY" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$300</span></p>
+            <p style="font-size:20px;"><i>"Llavero Frida Kahlo"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1VjdKeMZGJFagRf7U1O10AMdaS37ohIvM" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$250</span></p>
+            <p style="font-size:20px;"><i>"Llavero medusa"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1VzyiJaQuhD_NItyUnIT12qO6Ydw7BgVr" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$200</span></p>
+            <p style="font-size:20px;"><i>"Llavero ballena"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1VmPIhfxHmx3fl9c2rOIXpDRQSgXVoxgs" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$650</span></p>
+            <p style="font-size:20px;"><i>"Llavero estrella"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1Vw4NzLOWjPUdSG0tfgjgZtv8Luzr7JVG" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$650</span></p>
+            <p style="font-size:20px;"><i>"Unicornio"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1Vb9koLPNYoliIgtXkffaaqUZkA9uG9kF" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$650</span></p>
+            <p style="font-size:20px;"><i>"Llavero pajarito"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1W6a-uaFCNM9qiaq0vz0oMnSvdH3kMw2e" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$650</span></p>
+            <p style="font-size:20px;"><i>"Llavero reno"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="image-box">
+            <img class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=1VhUDVt_nJgCVOjxsx3V7J8-EvTJHCZDJ" alt="imagen de producto">
+          </div>
+          <div class="especificaciones">
+            <p><span class="precio">$650</span></p>
+            <p style="font-size:20px;"><i>"Corazones"</i></p>
+            <div class="color">
+              <p>Elegir color:</p>
+              <input type="color" name="" value="red">
+            </div>
+            <div class="unidades">
+              <p>Cant. unidades:</p>
+              <input type="number" name="" value="1">
+            </div>
+            <div class="carrito">
+              <p>Añadir al Carrito</p>
+              <input type="checkbox" name="office" value="1" />
+            </div>
+          </div>
+        </article>
+        <article class="ultimo"></article>
+      </div>
+    </section>
+    <section>
+      <input type="submit" value="Comprar" class="comprar"/>
+    </section>
+    <footer>
+      <div class="contenedor">
+        <div class="contacto">
+          <img style="width:150px;" class="b-lazy" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="https://drive.google.com/uc?id=180LAcGM794OTT39OrztIw3eBU4Oy6ITA" alt="logotipo mtejidos">
+          <div class="links">
+            <a href="tel:+573024456678">
+              <strong>Telefono:</strong>
+              <span>3024456678</span>
+            </a>
+            <a href="mailto:contact@mtejidos.com">
+              <strong>E-mail:</strong>
+              <span>contacto@mechi.com</span>
+            </a>
+          </div>
+        </div>
+        <div class="formulario">
+          <div class="col1">
+            <label for="nombre">Nombre</label>
+            <input type="text" required id="nombre" name="nombre"/>
+            <label for="email">E-mail</label>
+            <input type="email" required id="email" name="email"/>
+            <div class="sexo">
+              <label for="mujer">
+                <input type="radio" id="mujer" checked name="sexo" value="mujer"> mujer
+              </label>
+              <label for="hombre">
+                <input type="radio" id="hombre" name="sexo" value="hombre"> hombre
+              </label>
+            </div>
+            <div class="intereses">
+              <label for="cotizacion">
+                <input type="checkbox" checked id="cotizacion" name="intereses" value="cotizacion"> Cotización
+              </label>
+              <label for="reclamos">
+                <input type="checkbox" id="reclamos" name="intereses" value="reclamos"> Reclamos
+              </label>
+              <label for="comentarios">
+                <input type="checkbox" id="comentarios" name="intereses" value="comantarios"> Comentarios
+              </label>
+              <label for="otros">
+                <input type="checkbox" id="otros" name="intereses" value="otros"> Otros
+              </label>
+            </div>
+          </div>
+          <div class="col2">
+            <label for="comentarios">Comentarios</label>
+            <textarea name="comantarios" id="comentarios" cols="30" rows="7"></textarea>
+            <input type="submit" value="Enviar" class="button"/>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
